@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Transform extends Model
+{
+    protected $fillable = [
+        'transforms',
+        'input_text',
+        'output_text'
+    ];
+}
