@@ -1,7 +1,10 @@
-## Requirements
-- PHP >= 8.2
+##  Tech Stack
+
+- PHP 8.2+
 - Composer
-- Laravel Framework 11
+- Laravel 11
+- MySQL / MariaDB
+- Blade Template
 
 # Cara Menjalankan Project (Step by Step)
 
@@ -22,16 +25,27 @@ Jalankan perintah berikut: composer install
 # 3. Copy File Environment
 
 Laravel membutuhkan file konfigurasi `.env`.
-Copy file `.env.example` menjadi `.env`:
+Copy file `.env.example` menjadi `.env`
+setting .env untuk database
 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=keyboard_transform
+DB_USERNAME=root
+DB_PASSWORD=
 
 
 # 4. Generate Application Key
 
 Laravel membutuhkan **application key** untuk keamanan aplikasi.
-Jalankan perintah berikut: php artisan key:generate
+Jalankan perintah berikut: 
+php artisan key:generate
 
-# 5. Jalankan Server Laravel
+# 5. Run Migration
+php artisan migrate
+
+# 6. Jalankan Server Laravel
 
 Untuk menjalankan aplikasi, gunakan perintah: php artisan serve
 
