@@ -28,12 +28,14 @@ Laravel membutuhkan file konfigurasi `.env`.
 Copy file `.env.example` menjadi `.env`
 setting .env untuk database
 
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=keyboard_transform
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
 
 # 4. Generate Application Key
