@@ -18,7 +18,11 @@ Clone repository dari GitHub: git clone https://github.com/rakayl/test-mig.git
 # 2. Install Dependency dengan Composer
 
 Project ini menggunakan dependency manager **Composer**.
-Jalankan perintah berikut: composer install
+Jalankan perintah berikut: 
+
+```command
+composer install
+```
 
 
 
