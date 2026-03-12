@@ -46,14 +46,20 @@ DB_PASSWORD=
 
 Laravel membutuhkan **application key** untuk keamanan aplikasi.
 Jalankan perintah berikut: 
+```command
 php artisan key:generate
+```
 
 # 5. Run Migration
+```command
 php artisan migrate
+```
 
 # 6. Jalankan Server Laravel
 
-Untuk menjalankan aplikasi, gunakan perintah: php artisan serve
-
+Untuk menjalankan aplikasi, gunakan perintah: 
+```command
+php artisan serve
+```
 
 
