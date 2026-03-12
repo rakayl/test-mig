@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\TransformService;
 use App\Models\Transform;
+use App\Repositories\TransformRepository;
 
 class TransformController extends Controller
 {
+    private $repository;
+    public function __construct(TransformRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     public function index()
     {
-        $history = Transform::latest()->paginate(10);
+        $history = $this->repository->getHistory();
         return view('welcome', [
             'history' => $history
         ]);
@@ -25,12 +31,13 @@ class TransformController extends Controller
         $transforms = array_map('trim', explode(',', $request->transforms));
         $text = strtolower($request->text);
         $result = $service->transform($transforms, $text);
-        $history = Transform::latest()->paginate(10);
+        $history = $this->repository->getHistory();
         return view('welcome', [
             'result' => $result,
             'text' => $text,
             'transforms' => $request->transforms,
             'history' => $history
         ]);
+
     }
 }

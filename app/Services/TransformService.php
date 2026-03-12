@@ -5,13 +5,15 @@ namespace App\Services;
 use App\Models\Transform;
 use Illuminate\Support\Facades\DB;
 use Exception;
+use App\Repositories\TransformRepository;
 
 class TransformService
 {
     private const ORIGINAL = "1234567890qwertyuiopasdfghjkl;zxcvbnm,./";
     private $keyboard;
-    public function __construct()
+    public function __construct(TransformRepository $repository)
     {
+        $this->repository = $repository;
         $this->keyboard = str_split(self::ORIGINAL);
     }
     public function transform($transforms, $text)
